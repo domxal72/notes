@@ -44,7 +44,7 @@ class App extends Component {
           back: 'Back',
         },
       },
-      selectedLang: 'cz',
+      selectedLang: 'en',
       input: '',
       notes: [],
     }
@@ -166,8 +166,8 @@ class App extends Component {
               </h2>
             </div>
             <div>
-              <input name="cz" type="button" className="btn btn-secondary mr-2" value={lang.langList.cz} onClick={this.switchLang} />
-              <input name="en" type="button" className="btn btn-secondary" value={lang.langList.en} onClick={this.switchLang} />
+              <input name="en" type="button" className="btn btn-secondary mr-2" value={lang.langList.en} onClick={this.switchLang} />
+              <input name="cz" type="button" className="btn btn-secondary" value={lang.langList.cz} onClick={this.switchLang} />
             </div>
           </header>
 

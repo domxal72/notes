@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const NoteDetail = ({ appState, match, updateNote, deleteNote, handleUpdate, setInput }) => {
 
   useEffect(() => {
-    // fetch(`https://jsonplaceholder.typicode.com/posts/${match.params.id}`)
-    fetch(`http://private-9aad-note10.apiary-mock.com/notes/${match.params.id}`)
+    fetch(`https://jsonplaceholder.typicode.com/posts/${match.params.id}`)
+    // fetch(`http://private-9aad-note10.apiary-mock.com/notes/${match.params.id}`)
       .then(res => res.json())
       .then(note => {
         setInput(note.title)

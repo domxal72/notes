@@ -63,8 +63,8 @@ class App extends Component {
   }
   
   componentDidMount(){
-    // fetch('https://jsonplaceholder.typicode.com/posts')
-    fetch('http://private-9aad-note10.apiary-mock.com/notes')
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    // fetch('http://private-9aad-note10.apiary-mock.com/notes')
       .then(res => res.json())
       .then(notes => {
         this.setState({notes})
@@ -75,8 +75,8 @@ class App extends Component {
     e.preventDefault();
 
     try {
-      // let res = await fetch('https://jsonplaceholder.typicode.com/posts', {
-    let res = await fetch('http://private-9aad-note10.apiary-mock.com/notes', {
+      let res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    // let res = await fetch('http://private-9aad-note10.apiary-mock.com/notes', {
         method: 'POST',
         body: JSON.stringify({
           title: this.state.input,
@@ -105,8 +105,8 @@ class App extends Component {
 
   deleteNote = async (id) => {
     /* //  SERVER delete  // */
-    // let res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-    let res = await fetch(`http://private-9aad-note10.apiary-mock.com/notes/${id}`, {
+    let res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    // let res = await fetch(`http://private-9aad-note10.apiary-mock.com/notes/${id}`, {
         method: 'DELETE',
     })
     
@@ -115,15 +115,14 @@ class App extends Component {
       note.id.toString() !== id
     ))
 
-    this.setState({notes: newNotes})
+    this.setState({notes: newNotes, input: ''})
   }
 
   updateNote = async (id) => {
-
     /* //  SERVER update  // */
     try {
-      // let res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-    let res = await fetch(`http://private-9aad-note10.apiary-mock.com/notes/${id}`, {
+      let res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    // let res = await fetch(`http://private-9aad-note10.apiary-mock.com/notes/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
           title: this.state.input,
@@ -165,18 +164,37 @@ class App extends Component {
               </h2>
             </div>
             <div>
-              <input name="en" type="button" className="btn btn-secondary mr-2" value={lang.langList.en} onClick={this.switchLang} />
-              <input name="cz" type="button" className="btn btn-secondary" value={lang.langList.cz} onClick={this.switchLang} />
+              <input 
+                name="en" 
+                type="button" 
+                className="btn btn-secondary mr-2" 
+                value={lang.langList.en} 
+                onClick={this.switchLang} 
+              />
+              <input 
+                name="cz" 
+                type="button" 
+                className="btn btn-secondary" 
+                value={lang.langList.cz} 
+                onClick={this.switchLang} 
+              />
             </div>
           </header>
 
           <Switch>
             <Route exact path="/">
-              <AddNote appState={this.state} postNote={this.postNote} handleUpdate={this.handleUpdate}  />
+              <AddNote 
+                appState={this.state} 
+                postNote={this.postNote} 
+                handleUpdate={this.handleUpdate}  
+              />
               <div className="mt-3">
                 <h3 className="text-center">{lang[selectedLang].notesList}</h3>
                 <ul class="list-group">
-                  <NotesList appState={this.state} deleteNote={this.deleteNote}/>
+                  <NotesList 
+                    appState={this.state} 
+                    deleteNote={this.deleteNote}
+                  />
                 </ul>
               </div>
             </Route>

@@ -140,8 +140,7 @@ class App extends Component {
     }
     
      /* //  BROWSER update  // */
-    let updatedArr = this.state.notes.map(note => {
-    // let updatedArr = await this.state.notes.map(note => {
+    let updatedNotes = this.state.notes.map(note => {
       if ( note.id.toString() === id ) {
         note.title = this.state.input
         return note
@@ -149,7 +148,7 @@ class App extends Component {
         return note
       }
     });
-    this.setState({notes: updatedArr, input: ''})
+    this.setState({notes: updatedNotes, input: ''})
   }
 
   render(){
@@ -181,10 +180,18 @@ class App extends Component {
                 </ul>
               </div>
             </Route>
-            <Route path="/notedetail/:id" render={(props) => ( <NoteDetail deleteNote={this.deleteNote} updateNote={this.updateNote} handleUpdate={this.handleUpdate} setInput={this.setInput} {...props} appState={this.state} /> )} >
+            <Route path="/notedetail/:id" render={(props) => ( 
+              <NoteDetail 
+                {...props}
+                deleteNote={this.deleteNote} 
+                updateNote={this.updateNote} 
+                handleUpdate={this.handleUpdate} 
+                setInput={this.setInput}  
+                appState={this.state} 
+              /> 
+            )}>
             </Route>
           </Switch>
-
         </div>
       </Router>
     );

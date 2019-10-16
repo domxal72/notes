@@ -17,7 +17,8 @@ You will also see any lint errors in the console.
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }```
+  }
+ ```
 
 Linux (tested on Ubuntu 14.04/16.04) and MacOS (tested by @aswin-s on MacOS Sierra 10.12.4):<br />
     `"start": "PORT=9000 react-scripts start"`

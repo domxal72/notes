@@ -25,11 +25,11 @@ Linux (tested on Ubuntu 14.04/16.04) and MacOS (tested by @aswin-s on MacOS Sier
     ```
     "start": "PORT=9000 react-scripts start"
     ```
-or (may be) more general solution by @IsaacPak
+or (may be) more general solution by @IsaacPak<br />
     ```
     "start": "export PORT=9000 react-scripts start"
     ```
-Windows @JacobEnsor solution
+Windows @JacobEnsor solution<br />
     ```
     "start": "set PORT=9000 && react-scripts start"
     ```

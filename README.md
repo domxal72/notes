@@ -20,8 +20,8 @@ You will also see any lint errors in the console.
  }`
 
 Linux (tested on Ubuntu 14.04/16.04) and MacOS (tested by @aswin-s on MacOS Sierra 10.12.4):
-  "start": "PORT=9000 react-scripts start"
+  `"start": "PORT=9000 react-scripts start"`
 or (may be) more general solution by @IsaacPak
-  "start": "export PORT=9000 react-scripts start"
+  `"start": "export PORT=9000 react-scripts start"`
 Windows @JacobEnsor solution
-  "start": "set PORT=9000 && react-scripts start"
+  `"start": "set PORT=9000 && react-scripts start"`
